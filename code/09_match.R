@@ -78,6 +78,7 @@ saveRDS(roll_long, "./temp/nys_roll_long.rds")
 
 
 #####
+roll_long <- readRDS("./temp/nys_roll_long.rds")
 
 summary(glm(voted ~ treated * I(year == 2018) + midterm, data = roll_long))
 
@@ -88,12 +89,3 @@ summary(glm.cluster(formula = voted ~ treated * I(year == 2018) + treated * midt
 
 
 #####
-
-ll <- roll_long %>% 
-  group_by(treated, year) %>% 
-  summarize(v = mean(voted))
-
-ggplot(ll, aes(x = year, y = v)) + geom_line(aes(color = as.factor(treated)))
-
-
-
