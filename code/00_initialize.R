@@ -1,4 +1,5 @@
 library(AER)
+library(miceadds)
 library(jtools)
 library(lubridate)
 library(RStata)
@@ -54,3 +55,4 @@ db <- dbConnect(SQLite(), "D:/rolls.db")
 
 options("RStata.StataVersion" = 15)
 options("RStata.StataPath" = "\"C:\\Program Files (x86)\\Stata15\\StataSE-64\"")
+
