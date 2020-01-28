@@ -1,7 +1,7 @@
 ---
 title: "Re-enfranchisement and Co-mobilization"
-thanks: Prepared for the Annual Meeting of the American Sociological Association.
-author: Kevin Morris^[Researcher, Brennan Center for Justice at NYU School of Law, 120 Broadway Ste 1750, New York, NY 10271 (kevin.morris@nyu.edu)]
+thanks: Prepared for the 2020 Annual Meeting of the American Sociological Association.
+author: Kevin Morris^[Researcher, Brennan Center for Justice, 120 Broadway Ste 1750, New York, NY 10271 (kevin.morris@nyu.edu)]
 institute: "Brennan Center for Justice"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 output:
@@ -17,7 +17,7 @@ header-includes:
     - \usepackage{rotating}
     - \usepackage{setspace}\doublespacing
 abstract: |
-  Over the past two decades, scholars have sought to estimate the direct and indirect effects of felony disenfranchisement on political representation. The literature has generally found that felony disenfranchisement has negative indirect effects on turnout. The literature has not, however, examined the effect of *re-enfranchisement* on the turnout of other individuals. This study leverages a change in election rules in 2018 in New York State to determine whether living with a newly-enfranchised individual increases the turnout among individuals who were not directly effected in 2018 election. Using a matched difference-in-differences specification, I find that re-enfranchissing individuals not only adds these voices to the elections, but also spurs the turnout of proximal individuals.
+  Over the past two decades, scholars have sought to estimate the direct and indirect effects of felony disenfranchisement on political representation. The literature has generally found that felony disenfranchisement has negative indirect effects on turnout. The literature has not, however, examined the effect of *re-enfranchisement* on the turnout of other individuals. This study leverages a change in election rules in 2018 in New York State to determine whether living with a newly-enfranchised individual increases the turnout among individuals who were not directly effected in 2018 election. Using a matched difference-in-differences specification, I find that, although re-enfranchisement adds the voices of parolees to our democracy, household members of voting parolees are still less likely to vote than similarly situated voters. A future draft of this paper (to be presented at ASA) will attempt to decompose the negative effects of proximal contact with the criminal justice system from the positive effects of perceived expansive state action.
 ---
 \pagenumbering{gobble}
 \pagebreak
@@ -43,11 +43,11 @@ The political history of the United States has been characterized by a general, 
 
 Due to economic and racial segregation, these effects are highly spatially concentrated. Data available from New York City shows that in 2017, 10 of the New York Police Department's 77 precincts were responsible for more than a quarter of all arrests for felony charges. Many scholars have detailed the impact of living in areas with high levels of police activity. Residents of such neighborhoods suffer from worse physical health [@Sewell2016] and are more likely to suffer from anxiety and exhibit symptoms of trauma [@Geller2014]. The labor markets and social networks in neighborhoods with high levels of policing and incarceration are disrupted [@Clear2008], while concentrated policing has also been credited with having a "chilling effect" on neighborhoods' willingness to reach out for help to local governments [@Lerman2013]. Perhaps most troubling of all, these effects are not concentrated in random neighborhoods; as @Gelman2007 shows, for instance, New York's "stop-and-frisk" policy impacted Black and Latino New Yorkers at rates far higher than Whites, even after controlling for neighborhood variability and race-specific arrest rates. The result is an incarcerated population that looks far different than the rest of the state: according to data from the New York State Department of Corrections and Community Supervision, `r round(readRDS("./temp/share_black_incarcerated.rds"), digits = 3) * 100` percent of individuals who were incarcerated in December of 2018 were non-Hispanic Black, although the Census Bureau estimates that just 14.3 percent of the citizen voting age population in the state is non-Hispanic Black.^[Latinos are also over-represented among the incarcerated population, though not as dramatically: Latinos make up 14.1 percent of the citizen voting age population and 22.9 percent of the incarcerated population.]
 
-Felony disenfranchisement policies are part of a criminal justice system that disproportionately impacts Black Americans living in certain communities. The effects of disenfranchisement are concentrated in neighborhoods that already suffer from myriad disadvantages thanks to social and economic marginalization. The neighborhood-specific implications of felony disenfranchisement, however, remain largely unstudied. A number of studies have explored the effect of imprisonment and disenfranchisement on later political participation [@White2019; @Gerber2014; @Burch2011]. Others have looked at the spillover effects of disenfranchisement on eligible Black voters at the state [@Bowers2009; @King2016] and local levels [@Burch2013].
+Felony disenfranchisement policies are part of a criminal justice system that disproportionately impacts Black Americans living in certain communities. Although the disenfranchisement of incarcerated individuals is concerning on its own, there is evidence that felony disenfranchisement also reduces the participation even of individuals who are not formally disenfranchised. Studies have demonstrated that disenfranchisement policy has indirect effects on the turnout of eligible Black individuals at the state [@Bowers2009; @King2016] and local levels [@Burch2013].
 
-Although the literature has shown that disenfranchisement decreases the participation of eligible voters, little attention has been paid to the effect that re-enfranchisement might have on the behavior of these individuals. Are these proximal voters --- which @Walker2017 defines as individuals with "a loved one who is a custodial citizen without [themselves] having had contact" (547) --- permanently less likely to vote? Or, when a policy is changed to re-enfranchise the disenfranchised, can their turnout be increased?
+Although the literature has shown that disenfranchisement decreases the participation of eligible voters, little attention has been paid to the effect that re-enfranchisement might have on the behavior of these individuals. Are these proximal voters --- which @Walker2017 defines as individuals with "a loved one who is a custodial citizen without [themselves] having had contact" (547) --- permanently less likely to vote? Or, when a policy is changed to re-enfranchise the disenfranchised, can their turnout be increased? Considering the spatial concentration of incarceration networks, understanding whether the representation of these neighborhoods can be "recouped" through expansive state action is important.
 
-This paper leverages a change in New York State in 2018 that re-extended voting rights to most individuals on parole. Prior to 2018, individuals sentenced to felony incarceration or on parole were barred from voting (although felony probationers could participate). On election day in 2018, some XX individuals were on felony parole --- were it not for the policy change, none of them could have voted. This paper asks whether the individuals living with these newly-enfranchised individuals were more likely to vote than individuals who did not live with a newly-enfranchised individual.
+This paper leverages a change in New York State in 2018 that expanded the pool of eligible voters. On April 18, 2018, Governor Andrew Cuomo signed Executive Order 181 that re-enfranchised parolees. Prior to 2018, individuals sentenced to felony incarceration or on parole were barred from voting (although felony probationers could participate). On election day in 2018, some 20 thousand individuals were on felony parole --- were it not for the policy change, none of them could have voted. This paper asks whether the individuals living with these newly-enfranchised individuals were more likely to vote than individuals who did not live with a newly-enfranchised individual.
 
 # Background {-}
 
@@ -55,9 +55,15 @@ Since the 2000 election, scholars have attempted to quantify the effect of felon
 
 A number of papers have also explored the indirect impact felony disenfranchisement policies have on turnout among non-disenfranchised residents. @King2016, for instance, leverages state-level variation in disenfranchisement laws to estimate the impact that felony disenfranchisement has on turnout among Black Americans. They use data from the 2004 Current Population Survey Voting and Registration Supplement to calculate statewide turnout rates, and include estimates of the share of Black Americans who are disenfranchised in each state from @locked_out to explore the impact of these policies on eligible voters. They conclude that disenfranchisement has large spillover effects for Black voters: where more Black residents are disenfranchised, eligible Black voters are less likely to cast a ballot. These findings are in line with other research that has explored whether the effects of disenfranchisement extend beyond those whose voting rights are directly suspended [@Bowers2009; @Ochs2006]. As @Bowers2009 sums up: "[I]t is not solely the direct vote of ex-felons that is denied through these laws. [Felony disenfranchisement] impacts the political power of communities that extends beyond felons' collateral penalty" (724).
 
-Recent work from Hannah Walker [-@Walker2014; -@Walker2017; -@Walker2020] indicates that proximal contact with the criminal justice system can increase non-voting political participation, and that the extent to which they are mobilized can vary based on perceptions of government (un)fairness. To the extent that re-enfranchisement is perceived as a "fair" act that invites formerly incarcerated individuals back into the political system, it may encourage their loved ones to participate as well.
+Felony disenfranchisement likely reduces the turnout of proximal, eligible citizens through two primary mechanisms. The first is largely social: voting is a social act, and is greatly influenced by social networks [e.g. @Foladare1968; @Huckfeldt1979; @Kenny1992; @Mutz2002]. If a family member who would have voted is prevented from doing so, the sociality of voting is reduced, leaving other individuals in the household less likely to participate.
 
-It is important to note, however, that most formerly disenfranchised individuals do not vote even when given the opportunity [e.g. @Gerber2017]. As such, most individuals who are re-enfranchised are not truly "treated" by the policy change --- if they would not vote whether they were disenfranchised or not, removing the legal prohibition on voting will not be enough to get them to the ballot box. Potential voters who live with these individuals who go "untreated" by the policy change might similarly be unaffected by the policy change. To directly identify the proximal individuals impacted by the policy change, I focus only on individuals on parole who successfully cast a ballot in the 2018 election and their households. These voters, who excercised a vote they could not have in the absense of the policy change, are the most likely to bring their households with them to the polls.
+Secondly, there is a body of literature demonstrating that individuals who have negative interactions with the government --- and the incarceration of a household member is certainly in this category --- are less likely to choose to interact with the state in the future. These interactions have large "interpretive effects" [@Pierson1993]. @Lerman2013, for instance, shows that neighborhoods where there are many police stops that involve searches or use of force use 311 services less frequently. @Weaver2010 argues that interactions with the criminal justice system changes how individuals understand both their identities as citizens and the nature of governmental structures. Similarly, @Weaver2014 tells us that those who have had contact with the criminal justice system consider political participation not just unfruitful but rather "as something to be actively avoided" (16).
+
+The re-enfranchisement of parolees is likely to influence the turnout of members of their households through both of these mechanisms. An additional voter in a household can increase the turnout of the entire household. At the same time, voters who share a home with someone who was disenfranchised but no longer is may interpret the expansive action of the state favorably. If the government has acted to bring my father or brother back into the democratic process, I may believe that the government is in my vote.
+
+Recent work from Hannah Walker [-@Walker2014; -@Walker2017; -@Walker2020] indicates that proximal contact with the criminal justice system can increase non-voting political participation, and that the extent to which they are mobilized can vary based on perceptions of government (un)fairness. To the extent that re-enfranchisement is perceived as a "fair" act that invites formerly incarcerated individuals back into the political system, it may encourage their loved ones to participate as well. Similarly, @White2019a asks whether household members of incarcerated individuals participate at lower rates. She finds "evidence of a short-term demobilization effect for people who see household members convicted or jailed in the weeks before the election, but no evidence of a lasting turnout effect from these experiences" (607).
+
+Most formerly disenfranchised individuals do not vote even when given the opportunity [e.g. @Gerber2017]. As such, most individuals who are re-enfranchised are not truly "treated" by the policy change --- if they would not vote even if they were not legally disenfranchised, removing the legal prohibition on voting will not be enough to get them to the ballot box. Potential voters who live with these individuals who go "untreated" by the policy change might similarly be unaffected by the policy change. To directly identify the proximal individuals impacted by the policy change, I focus only on individuals on parole who successfully cast a ballot in the 2018 election and their households. These voters, who cast a ballot that they could not have in the absense of the policy change, are the most likely to bring their households with them to the polls.
 
 # Data {-}
 
@@ -86,12 +92,12 @@ Thus, "John Andrew Doe" and "John A Doe" would count as matches. Similarly, "Joh
 
 There are two types of potential error in this methodology: a false positive will result when a formerly incarcerated individual's records matches the record of a voter who is a different individual but shares the same name and date of birth. False negatives will occur when an individual has a different name in the different sets of records, or when the birthdate is incorrectly reported in one of the sets of records
 
-Testing for the presence of false positive matches is fairly straightforward. @Meredith2013 offers one way to test their prevalence using placebo matching. I slightly alter the date of birth reported in the NYSDOCCS dataset to create false records. Comparing the number of matches between these "fake" records and the voter file with the number of matches between the "true" records and the voter file provides an estimate of how frequently false positives occur. Table \ref{tab:change-dobs} shows the results of true matches, as well as matches using a set of fake records created by adding or subtracting 35 days from an individual's birthdate. This analysis indicates that false positives account for between 0.4 and 0.5 percent of all matches, a share that is likely too small to have any material impact on the overall analysis. The numbers in Table \ref{tab:change-dobs} are derived by matching (and modifying) all individuals who were incarcerated or on parole on Election Day in 2017 with the registered voter file from April of 2018.
+Testing for the presence of false positive matches is fairly straightforward. @Meredith2013 offers one way to test their prevalence using placebo matching. I slightly alter the date of birth reported in the NYSDOCCS dataset to create false records. Comparing the number of matches between these "fake" records and the voter file with the number of matches between the "true" records and the voter file provides an estimate of how frequently false positives occur. Table \ref{tab:change-dobs} shows the results of true matches, as well as matches using a set of fake records created by adding or subtracting 35 days from an individual's birthdate. This analysis indicates that false positives account for about 0.4 percent of all matches, a share that is likely too small to have any material impact on the overall analysis. The numbers in Table \ref{tab:change-dobs} are derived by matching (and modifying) all individuals who were incarcerated or on parole on Election Day in 2017 with the registered voter file from April of 2018.
 
 ```{r shift-dobs-chunk, echo = F}
-less_35 <- scales::comma(nrow(readRDS("./temp/matched_ids_in_17_m35.rds")))
-true <- scales::comma(nrow(readRDS("./temp/matched_ids_in_17.rds")))
-plus_35 <- scales::comma(nrow(readRDS("./temp/matched_ids_in_17_p35.rds")))
+less_35 <- readRDS("./temp/m35_2.rds")
+true <- scales::comma(nrow(readRDS("./temp/din_nys_parolees.rds")))
+plus_35 <- readRDS("./temp/p35_2.rds")
 
 
 table <- data.frame(group = c("Actual Birthdate", "Birthdate + 35 Days", "Birthdate - 35 Days"), count = c(true, plus_35, less_35))
@@ -108,7 +114,7 @@ j
 ```
 Testing for false negatives is more challenging. If an individual marries and changes her name after being discharged from parole, for instance, I will not identify her using my matching methodology. Similarly, "John Doe" and "Jonathan Doe" would not result in a match. To reduce the likelihood of these false negatives I remove all punctuation from all names, and standardize capitalization. A record with a last name of "O'Donnell" in one dataset, therefore, would match a last name of "O DONNELL" in the other (provided the other criteria are satisfied). Such standardizations, however, will miss individuals who change their names entirely. For three reasons, however, this is not likely to present major challenges: firstly, women are far more likely to change their last names than men, and women make up barely 6 percent of individuals who have been discharged from felony parole. Secondly, because both parolee discharge and voter registration are legal records, individuals are likely to be recorded using their full names (that is to say, an individual is unlikely to be "John" in one set of records and "Jonathan" in the other). Finally, rates of false negatives are likely to be constant within the state during the study period, and there is no reason to believe that these false negatives would be associated with being discharged from parole after the Executive Order went into effect.
 
-Although there were many individuals who matched with the voter file, relatively few of them cast a ballot in the 2018 midterm election. This matching procedure estimates that, of the XX individuals on felony parole as of the election, roughly 1,200 voted.
+Although there were many individuals who matched with the voter file, relatively few of them cast a ballot in the 2018 midterm election. This matching procedure estimates that, of the 20 thousand individuals on felony parole as of the election, roughly 1,200 voted.
 
 ## Identification of Treated Voters {-}
 
@@ -116,7 +122,7 @@ Voters are considered if they were not on parole and lived with an individual wh
 
 I use two strategies for identifying individuals who lived with parolees who participated. I begin by considering all individuals registered to the same residential address (including apartment number) as a parolee who voted. This method identifies 3,811 treated voters.
 
-It is possible, despite L2's efforts to standardize addresses, that voters who live in the same household could have slightly different addresses in the voter file. The second strategy, therefore, identifies all individuals who live at the same latitutde and longitude as a parolee who voted, and who shares a last name with that parolee. This methodology identifies just 768, likely pointing to the fact that many parolees live in households in which they do not share the same last name as friends or family members.
+It is possible, despite L2's efforts to standardize addresses, that voters who live in the same household could have slightly different addresses in the voter file. The second strategy, therefore, identifies all individuals who live at the same latitutde and longitude as a parolee who voted, and who shares a last name with that parolee. This methodology identifies just 768, likely pointing to the fact that many parolees live in households in which they do not share the same last name as friends or family members. Analysis of this second treatment definition will be included in the next version of this paper.
 
 ## Genetic Matching {-}
 
@@ -124,9 +130,93 @@ The central causal identification strategy in this project is a difference-in-di
 
 Using *all* untreated voters, however, threatens to violate the parallel trends assumption inherent in difference-in-differences models. There is real reason to believe that treated voters are substantially different than untreated voters --- individuals who live in close proximity to individuals who have been to prison are likely unrepresentative of all registered voters.
 
-To ensure that the control group is as representative of the treatment group as possible, I match treated individuals to untreated individuals using a genetic matching algorithm [@Sekhon2011].^[Due to computing constraints, the genetic weights are constructed using all treated voters and a random 0.5 percent sample of untreated voters. The ultimate matching uses these weights and includes *all* untreated voters as potential matches.] Untreated voters are matched to treated voters along the following characteristics: gender, age, partisan affiliation, whether they graduated from college, estimated household income, and their race / ethnicity.^[College attainment, household income, and race / ethnicty are estimated by L2. A small set of the records in the L2 data do not have estimates for these characteristics. Although the missing records are not expected to impact the analysis meaningfully, I will estimate these sociodemographic estimates in the next draft of this paper.] To account for different levels of competitiveness in local US house races in 2018, treated voters are forced to match with untreated voters in their same congressional district. Table \ref{tab:match-output} shows the outcome of this matching procedure.
+To ensure that the control group is as representative of the treatment group as possible, I match treated individuals to untreated individuals using a genetic matching algorithm [@Sekhon2011].^[Due to computing constraints, the genetic weights are constructed using all treated voters and a random 1 percent sample of untreated voters. Although the weights are constructed using a sample of untreated voters, all untreated voters are included as potential matches. As Table \ref{tab:match-output} indicates, constructing the weights from a sample of voters does not ultimately result in poor matches.] Untreated voters are matched to treated voters along the following characteristics: gender, age, partisan affiliation, whether they graduated from college, estimated household income, and their race / ethnicity.^[College attainment, household income, and race / ethnicty are estimated by L2. A small set of the records in the L2 data do not have estimates for these characteristics. Although the missing records are not expected to impact the analysis meaningfully, I will estimate these sociodemographic estimates in the next draft of this paper.] To account for different levels of competitiveness in local US house races in 2018, treated voters are forced to match with untreated voters in their same congressional district. Each treated voter is matched with three untreated voters, and matching is done with replacement. Table \ref{tab:match-output} shows the outcome of this matching procedure.
+
+```{r match-table-chunk, echo = F}
+t <- readRDS("./temp/match_table_t1.rds")
+j <- knitr::kable(t, booktabs = T, caption = "(\\#tab:match-output) Results of Genetic Matching", linesep = "") %>% 
+  add_header_above(c(" " = 1, "Means: Unmatched Data" = 2, "Means: Matched Data" = 2, "Percent Improvement" = 4), align = "c") %>% 
+  kable_styling(latex_options = c("scale_down", "HOLD_position"))
+j
+```
 
 The matching improves the balance between the treatment and control groups substantially. As expected, the treated group looks very different than the untreated group: they have lower incomes, are less likely to be white, and are more likely to be Democrats.
+
+# Results {-}
+
+Figure \ref{fig:timeline} shows the turnout rates among registered voters for three groups: the treatment group, potential control voters in New York State (all untreated voters), and the untreated voters who were selected for the control group via the matching procedure (and, because matching is done with replacement, this group is weighted by the number of times each voted was used as a control). Turnout is lower for the control group and the treatment group than for all untreated voters. The turnout of treated and control voters is virtually identical for pre-2018 midterm elections, although a gap appears in presidential election years. In 2018 --- the year in which a household member of the treated group was on parole and cast a ballot --- turnout for treated voters is lower than for the control group, an apparent departure from previous midterm elections.
+
+```{r timeline-chunk, echo = FALSE, message = F, warning = F, fig.width = 7.5, fig.height = 4, fig.cap = "\\label{fig:timeline}Turnout for Treated, Untreated, and Control Groups", fig.pos = "H", fig.align = "center"}
+j <- readRDS("./temp/timeline.rds")
+print(j)
+```
+
+Table \ref{tab:d-in-d} formalizes Figure \ref{fig:timeline} in a difference-in-differences specification. In addition to the standard variables identifying the treated group, the treatment period, and the interaction between these two variables, I include the interaction between the treated group and presidential election years. This accounts for the observed gap in turnout between the treatment and control groups in 2012 and 2016. Model 1 includes no other covariates, while Model 2 includes the covariates that were used for the matching procedure. In each model, robust standard errors are clustered at the level of the match [@Abadie2019].
+
+```{r reg1, echo = F, results = "hide", message = F, warning = F}
+load("./temp/reg1.rdata")
+
+stargazer(model1, model2,
+          header = F,
+          type = "latex", notes.align = "l",
+          covariate.labels = c("D(Treated)", "D(Presidential Year)",
+                               "D(2018)",
+                               "D(Treated) \\times D(Presidential Year)",
+                               "D(Treated) \\times D(2018)"),
+          dep.var.labels = c("Cast a Ballot"),
+          title = "\\label{tab:d-in-d} Individual-Level Logit Models",
+          table.placement = "H",
+          omit = c("gender", "age", "dem", "college", "white", "black", "latino", "asian",
+                   "income", "cd"),
+          add.lines=list(c("Matching Covariates Included", "", "X")),
+          table.layout = "-dm#-t-a-s-n",
+          out = "./temp/test.tex",
+          notes = "TO REPLACE",
+          out.header = F,
+          se = list(
+            model1_ses, model2_ses)
+          )
+
+j <- fread("./temp/test.tex", header = F, sep = "+")
+
+note.latex <- "\\multicolumn{3}{l}{\\scriptsize{\\parbox{.5\\linewidth}{\\vspace{2pt}$^{***}p<0.01$, $^{**}p<0.05$, $^*p<0.1$. \\\\Robust standard errors (clustered at level of match) in parentheses.}}}"
+
+j <- j %>% 
+  mutate(V1 = ifelse(grepl("TO REPLACE", V1), note.latex, V1),
+         V1 = ifelse(grepl("\\\\#tab", V1), gsub("\\\\#", "", V1), V1)) %>% 
+  filter(!grepl("Note:", V1)) %>% 
+  mutate(n = row_number())
+
+insert1 <- "\\fontsize{10}{12}\\selectfont"
+
+j <- bind_rows(j, data.frame(V1 = c(insert1), n = c(1.1))) %>% 
+  arrange(n) %>% 
+  select(-n)
+
+write.table(j, "./temp/table1.tex", quote = F, col.names = F,
+            row.names = F)
+
+```
+\input{"../temp/table1.tex"}
+
+
+This result is somewhat surprising: we expected to find a positive treatment effect, but instead find a significant and negative effect. Exponentiating the coefficients in Table \ref{tab:d-in-d} indicates that treatment decreased turnout by a little more than 2 percent.
+
+This negative treatment effect becomes less surprising when we consider that treated voters are receiving not one but rather *two* treatments: they have had proximal contact with the criminal justice system (a household member went to prison) in addition to living with a newly enfranchised individual. Much of the previous literature has indicated that felony disenfranchisement rules decreases turnout --- it seems in this case that any potential positive effect of living with someone who has been re-invited into the democratic process is swamped by living in proximity with formerly incarcerated individuals.
+
+Ideally, we could decompose the proximal contact effect from the reintegration effect by comparing the turnout of household members of non-voting parolees to the turnout of those who live with voting parolees. The State of New York, however, does not make the home addresses of parolees publicly available, which hampers our ability to perform that analysis.
+
+We can, however, attempt to decompose the treatment effects via another route. Prior to the policy change, parolees had their rights restored upon discharge from parole. Household members of individuals who voted in 2018 and were *formerly* paroled offer a control group: these household members also had proximal contact with the criminal justice system, but the members of their household who had gone to prison were no longer under formal supervision. It is unlikely that they would perceive the enfranchisement of their formerly paroled household members as a positive, expansive state action: the rules were not affirmatively changed to incorporate the voices of the member of their household. If individuals who lived with current parolees who voted turned out at higher rates, that would indicate that there is a positive interpretive effect on household participation when expansive state action occurs --- even if the positive effect is not enough to undo the negative effects of proximal contact.
+
+The next draft of this paper will incorporate this analysis.
+
+# Conclusion {-}
+
+Much of the existing literature indicates that felony disenfranchisement has negative spillover effects --- that individuals who live in proximity to citizens who are sent to prison are less likely to vote, even when their own eligibility is not formally curtailed. Less work, however, has been done to see whether the participation of these eligible voters can be won back through the state's expansion of the franchise.
+
+In the analysis presented here, the answer appears to be no: living in close proximity to parolees who exercised their newly-restored voting rights did not increase participation. This is troubling, but perhaps unsurprising --- trust in government is perhaps lost more easily than it is regained.
+
+The question remains, however, whether re-incorporation of parolees has a countervailing force against the negative effects of proximal contact. The re-enfranchisement of parolees certainly increases the participation of parolees: as discussed above, nearly 1,200 parolees cast a ballot in 2018, and none of them could have done so in the absence of the policy change. The next version of this paper will explore whether the household members of parolees who voted were more likely to vote than the household members of individuals who cast a ballot only after finishing their parole term. I expect that there will be a positive countervailing force uncovered.
 
 \newpage
 # References {-}
