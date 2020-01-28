@@ -1,7 +1,7 @@
 ## this can be run locally or on NYU's HPC. Set option in next step
 ## option allowed because of how long GenMatch can take
 
-on_nyu <- F
+on_nyu <- T
 
 if(on_nyu){
   library(Matching)
@@ -30,12 +30,12 @@ nys_roll <- readRDS("./temp/pre_gen_roll.rds")
 samp <- rbind(
   filter(nys_roll, treated == 1),
   filter(nys_roll, !treated) %>% 
-    sample_frac(0.005)
+    sample_frac(0.01)
 )
 
 match_data <- samp %>% 
   select(-LALVOTERID, -treated, -starts_with("General"))
 
 genout <- GenMatch(Tr = samp$treated, X = match_data, replace = T, cluster = cl,
-                   exact = c(F, F, F, F, T, F, F, F, F, F, F, F, F, F, F))
+                   exact = c(rep(F, 4), T, rep(F, 5)))
 saveRDS(genout, "./temp/genout_t1.rds")

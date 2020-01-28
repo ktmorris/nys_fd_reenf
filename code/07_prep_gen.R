@@ -1,27 +1,4 @@
-## this can be run locally or on NYU's HPC. Set option in next step
-## option allowed because of how long GenMatch can take
 
-on_nyu <- F
-
-if(on_nyu){
-  library(Matching)
-  library(data.table)
-  library(snow)
-  library(parallel)
-  library(scales)
-  library(kableExtra)
-  library(tidyverse)
-  
-  setwd("/scratch/km3815/matching")
-  
-  NodeFile = Sys.getenv("MY_HOSTFILE")
-  
-  
-  cl <- makeCluster(c(readLines(NodeFile)), type="SOCK")
-}else{
-  source("./code/misc/AutoCluster4.R")
-  cl <- NCPUS(detectCores() - 1)
-}
 
 load("./temp/treated_control.rdata")
 
@@ -30,7 +7,7 @@ nys_roll <- readRDS("./temp/nys_slim.rds") %>%
          CommercialData_Education, US_Congressional_District, EthnicGroups_EthnicGroup1Desc) %>% 
   mutate(gender = Voters_Gender == "F",
          age = Voters_Age,
-         dem = Parties_Description == "Democrat",
+         dem = Parties_Description == "Democratic",
          college = grepl("Bach|Grad", CommercialData_Education),
          white = EthnicGroups_EthnicGroup1Desc == "European",
          black = EthnicGroups_EthnicGroup1Desc == "Likely African-American",
